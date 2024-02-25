@@ -1,14 +1,16 @@
-1. Desainlah Database untuk menyimpan data :
+**PRAKTIKUM TAKS 3**
 
-2. website undangan nikah online
+>1. Desainlah Database untuk menyimpan data :
 
-3. Ditandai mana yang harus disimpan di database
+>2. website undangan nikah online
+
+>3. Ditandai mana yang harus disimpan di database
 
 ![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/40b49182-3d1b-4159-93ea-bf80b2221beb)
 
 ![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/c8506584-5e29-44f1-bae3-396db651d29f)
 
-4. Bikin Tabel nya, bisa jadi lebih dari satu tabel
+>4. Bikin Tabel nya, bisa jadi lebih dari satu tabel
 
 - Tabel Website Undangan Nikah Online
 
