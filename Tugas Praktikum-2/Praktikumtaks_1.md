@@ -1,4 +1,4 @@
-**PRAKTIKUM TASK 1**
+**PRAKTIKUM TAKS 1**
 
 ![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/40c550b2-a255-46d0-a1a3-9425c777b7e9)
 
