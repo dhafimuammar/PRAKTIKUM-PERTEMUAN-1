@@ -1,10 +1,10 @@
-1. Desainlah Database untuk menyimpan data buku tamu
+>1. Desainlah Database untuk menyimpan data buku tamu
 
-2. ketentuan :
+>2. ketentuan :
 
-3. Attribute : Kolom
+>3. Attribute : Kolom
 
-4. Entitas : tabel
+>4. Entitas : tabel
 
 Saya mendesain tabel untuk menyimpan database data buku tamu yang ber attribute nama tamu, alamat, tanda tangan,dan kode unik
 
