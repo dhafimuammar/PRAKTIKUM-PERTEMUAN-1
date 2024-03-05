@@ -16,6 +16,11 @@
 
 ![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/c58e651f-775f-4b83-945d-798b5f1459df)
 
+>4. Menggambar Manual Diagaram:
+
+![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/cab87945-a798-4401-8ad8-ecb7752e26a4)
+
+
 
 
    
