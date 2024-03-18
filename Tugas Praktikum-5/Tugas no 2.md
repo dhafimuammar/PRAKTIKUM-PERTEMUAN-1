@@ -1,0 +1,4 @@
+>Pada suatu toko komputer perlu dicatat data-data seperti berikut. Data komputer perlu dicatat nomor seri yang unik untuk setiap komputer, merk, os, prosesor, RAM, penyimpanan, ukuran layar, resolusi, graphic card, dan harga. Data pembelian yang perlu dicatat adalah kode yang unik, tgl pembelian, dan pegawai yang menangani pembelian. Setiap pembelian dapat membeli banyak komputer. Disetiap pembelian komputer perlu dicatat harga beli yang bisa berbeda dari harga komputer. Setiap pegawai perlu dicatat kode pegawai yang unik, nama, alamat, no hp, tempat dan tanggal lahir. Perlu dicatat supervisor langsung dari pegawai. Dimana setiap supervisor membawahi banyak pegawai dan satu pegawai dibawahi oleh satu supervisor.
+
+
+![image](https://github.com/dhafimuammar/TUGAS-PRAKTIKUM/assets/160202301/958e86e5-8403-47b0-b68c-f91ae0de1a60)
