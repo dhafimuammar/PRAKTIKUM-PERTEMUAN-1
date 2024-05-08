@@ -1,0 +1,191 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 08 Bulan Mei 2024 pada 09.48
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sekolah`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `acara`
+--
+
+CREATE TABLE `acara` (
+  `id_turnamen` int(11) NOT NULL,
+  `id_acara` int(11) NOT NULL,
+  `nama_acara` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kepanitiaan`
+--
+
+CREATE TABLE `kepanitiaan` (
+  `id_pegawai` int(11) NOT NULL,
+  `id_panitia` int(11) NOT NULL,
+  `nama_panitia` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pegawai`
+--
+
+CREATE TABLE `pegawai` (
+  `id_pegawai` int(11) NOT NULL,
+  `nama_pegawai` varchar(255) NOT NULL,
+  `alamat_pegawai` varchar(255) NOT NULL,
+  `no_telefon` int(15) NOT NULL,
+  `umur` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sekolah`
+--
+
+CREATE TABLE `sekolah` (
+  `id_sekolah` int(11) NOT NULL,
+  `nama_sekolah` varchar(255) NOT NULL,
+  `alamat_sekolah` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `id_siswa` int(11) NOT NULL,
+  `nama_siswa` varchar(255) NOT NULL,
+  `alamat_siswa` varchar(255) NOT NULL,
+  `umur` int(3) NOT NULL,
+  `no_telefon` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tim`
+--
+
+CREATE TABLE `tim` (
+  `id_siswa` int(11) NOT NULL,
+  `id_tim` int(11) NOT NULL,
+  `nama_tim` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `turnamen`
+--
+
+CREATE TABLE `turnamen` (
+  `id_sekolah` int(11) NOT NULL,
+  `id_turnamen` int(11) NOT NULL,
+  `nama_turnamen` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `acara`
+--
+ALTER TABLE `acara`
+  ADD PRIMARY KEY (`id_turnamen`,`id_acara`);
+
+--
+-- Indeks untuk tabel `kepanitiaan`
+--
+ALTER TABLE `kepanitiaan`
+  ADD PRIMARY KEY (`id_pegawai`,`id_panitia`);
+
+--
+-- Indeks untuk tabel `pegawai`
+--
+ALTER TABLE `pegawai`
+  ADD PRIMARY KEY (`id_pegawai`,`no_telefon`,`umur`);
+
+--
+-- Indeks untuk tabel `sekolah`
+--
+ALTER TABLE `sekolah`
+  ADD PRIMARY KEY (`id_sekolah`);
+
+--
+-- Indeks untuk tabel `siswa`
+--
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`id_siswa`,`umur`,`no_telefon`);
+
+--
+-- Indeks untuk tabel `tim`
+--
+ALTER TABLE `tim`
+  ADD PRIMARY KEY (`id_siswa`,`id_tim`);
+
+--
+-- Indeks untuk tabel `turnamen`
+--
+ALTER TABLE `turnamen`
+  ADD PRIMARY KEY (`id_sekolah`,`id_turnamen`),
+  ADD KEY `id_turnamen` (`id_turnamen`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `acara`
+--
+ALTER TABLE `acara`
+  ADD CONSTRAINT `acara_ibfk_1` FOREIGN KEY (`id_turnamen`) REFERENCES `turnamen` (`id_turnamen`);
+
+--
+-- Ketidakleluasaan untuk tabel `kepanitiaan`
+--
+ALTER TABLE `kepanitiaan`
+  ADD CONSTRAINT `kepanitiaan_ibfk_1` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`);
+
+--
+-- Ketidakleluasaan untuk tabel `tim`
+--
+ALTER TABLE `tim`
+  ADD CONSTRAINT `tim_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`);
+
+--
+-- Ketidakleluasaan untuk tabel `turnamen`
+--
+ALTER TABLE `turnamen`
+  ADD CONSTRAINT `turnamen_ibfk_1` FOREIGN KEY (`id_sekolah`) REFERENCES `sekolah` (`id_sekolah`),
+  ADD CONSTRAINT `turnamen_ibfk_2` FOREIGN KEY (`id_turnamen`) REFERENCES `acara` (`id_turnamen`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
